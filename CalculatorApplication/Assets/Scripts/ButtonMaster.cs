@@ -22,7 +22,7 @@ public class ButtonMaster : MonoBehaviour
     public GameObject Button0;
     public GameObject ButtonC;
     public GameObject ButtonNot;
-    public GameObject ButtonPar;
+    public GameObject ButtonBac;
     public GameObject ButtonDiv;
     public GameObject ButtonMul;
     public GameObject ButtonAdd;
@@ -58,7 +58,7 @@ public class ButtonMaster : MonoBehaviour
     public void digit(GameObject button)
     {
         int index = Array.IndexOf<GameObject>(NumberList, button);
-        if (result.text == "0")
+        if (result.text == "")
         {
             result.text = Convert.ToString(index);
         }
@@ -107,5 +107,13 @@ public class ButtonMaster : MonoBehaviour
     public void dotOperation()
     {
         result.text = result.text + ".";
+    }
+
+    public void backOperation()
+    {
+        if (result.text.Length > 0)
+        {
+            result.text = result.text.Remove(result.text.Length - 1);
+        }
     }
 }
