@@ -37,6 +37,7 @@ public class ButtonMaster : MonoBehaviour
     {
         NumberList = new GameObject[10] {Button0, Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8, Button9};
         ActionList = new GameObject[4] {ButtonAdd, ButtonSub, ButtonMul, ButtonDiv};
+        result.text = "0";
     }
 
 
@@ -115,5 +116,9 @@ public class ButtonMaster : MonoBehaviour
         {
             result.text = result.text.Remove(result.text.Length - 1);
         }
+    }
+    public void updateResult(string Text)
+    {
+        result.text = Text;
     }
 }
